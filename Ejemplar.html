@@ -13,9 +13,9 @@
                 <object data="Layout.html" type="text/html" style="width: 100%;"></object>
         <!-- Content here -->
 
-        <h3>
-            <small class="text-muted">Creación Usuarios</small>
-          </h3>
+            <h3>
+                <small class="text-muted">Creación Ejemplar</small>
+            </h3>
         
         <div class="row">
             <div class="col-6" id="menu">
@@ -23,19 +23,25 @@
                 <input type="text" class="form-control" id="txtNombre" }>
             </div>     
             <div class="col-6" id="menu">
-                <label>Nombres y Apellidos</label>
+                <label>Localizacion</label>
                 <input type="text" class="form-control" id="txtApellidos" }>
             </div>  
         </div>
+        <br>
+        <br>
         <div class="row">
             <div class="col-6" id="menu">
-                <label>Telefono</label>
-                <input type="text" class="form-control" id="txtNombre" }>
+                <div class="btn-group">
+                    <button type="button" class="btn btn-secondary " style="width: 500px;" data-bs-toggle="dropdown"  aria-expanded="false">
+                      Libro
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-end dropdown-menu-lg-start">
+                      <li><button class="dropdown-item" type="button">Cien años de Soledad</button></li>
+                      <li><button class="dropdown-item" type="button">Inferno</button></li>
+                      <li><button class="dropdown-item" type="button">Cromica de una Muerte Anunciada</button></li>
+                    </ul>
+                  </div>
             </div>     
-            <div class="col-6" id="menu">
-                <label>Dirección</label>
-                <input type="text" class="form-control" id="txtApellidos" }>
-            </div>  
         </div>
         <br>
         
