@@ -18,7 +18,7 @@ require_once("../Config/database.php");
 
         public function create_libro(){
             try{
-                $db = Connect::Conectar()->prepare("INSERT INTO libro (codigo, titulo, isbn, editorial, paginas, idautor) VALUES ('$this->codigo', '$this->titulo' , '$this->isbn', '$this->editorial', '$this->paginas', '$this->isautor')");
+                $db = Connect::Conectar()->prepare("INSERT INTO libro (codigo, titulo, isbn, editorial, paginas, idautor) VALUES ('$this->codigo', '$this->titulo' , '$this->isbn', '$this->editorial', '$this->paginas', '$this->idAutor')");
                 $db->execute();
             }catch(PDOEXception $e){
                 echo $e->getMessage();
@@ -44,30 +44,21 @@ require_once("../Config/database.php");
             return $this->libro;
         }
 
-        public function delete_autor(){
-            $db = Connect::Conectar()->prepare("DELETE FROM autor WHERE id='".$this->id."'");
+        public function delete_libro(){
+            $db = Connect::Conectar()->prepare("DELETE FROM libro WHERE codigo='".$this->codigo."'");
             $res = $db->execute();
             if($res){
-                $this->get_autores();
+                $this->get_libros();
             }else{
                 return false;
             }
         }
 
-        public function get_id($codigo){
-            $db = Connect::Conectar()->prepare("SELECT * FROM autor WHERE id='".$this->id."' ");
-            $res = $db->execute();
-            if($row = $res->fetch_assoc()){
-                $this->autor[] = $row;
-            }
-            return $this->autor;
-        }
-
-        public function update_autor(){
-            $db = Connect::Conectar()->prepare("UPDATE autor SET nombre='".$this->nombre."' , apellido='".$this->apellido." ' where id='".$this->id."' ");
+        public function update_libro(){
+            $db = Connect::Conectar()->prepare("UPDATE libro SET Codigo='".$this->codigo."' , Titulo='".$this->titulo." ', ISBN='".$this->isbn." ', Editorial='".$this->editorial." ', Paginas='".$this->paginas." ', IdAutor='".$this->idAutor." ' where codigo='".$this->codigo."' ");
             $res = $db->execute();
             if($res){
-                $this->get_autores();
+                $this->get_libros();
             }else{
                 return false;
             }
