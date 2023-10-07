@@ -5,7 +5,7 @@
         $servidor = "localhost";
         $db = "biblioteca";
         $user = "root";
-        $pass = "admin1234";
+        $pass = null;
 
             $conexion = new PDO("mysql:host=$servidor;dbname=$db;",$user,$pass);
             

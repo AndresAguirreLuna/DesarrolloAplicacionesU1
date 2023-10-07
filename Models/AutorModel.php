@@ -13,7 +13,7 @@ require_once("../Config/database.php");
             $this->id = $parametros["id"];
         }
 
-        public function insertar(){
+        public function create_autor(){
             try{
                 $db = Connect::Conectar()->prepare("INSERT INTO autor (id, nombre, apellido) VALUES ('$this->id', '$this->nombre' , '$this->apellido')");
                 $db->execute();
@@ -21,16 +21,15 @@ require_once("../Config/database.php");
                 echo $e->getMessage();
                 die();
             }
-            $this->get_editoriales();
-            //require_once("../Views/AgregarEditorial.php");
+            $this->get_autores();
         }
 
-        public function get_editoriales(){
-            $db = Connect::Conectar()->prepare("SELECT * FROM editorial");
+        public function get_autores(){
+            $db = Connect::Conectar()->prepare("SELECT * FROM autor");
             $db->execute();
             if($db->rowCount()>=0){
                 try{
-                    require_once("../Views/AdminEditorial.php");
+                    require_once("../Views/AdminAutor.php");
                     while($row = $db->fetch()):
                         return;
                     endwhile;
@@ -39,35 +38,33 @@ require_once("../Config/database.php");
                     die();
                 }
             }
-            return $this->editorial;
+            return $this->autor;
         }
 
-        //Los siguientes metodos deben ajustarse-----
-
-        public function delete_editorial(){
-            $db = Connect::Conectar()->prepare("DELETE FROM editorial WHERE codigo='".$this->id."'");
+        public function delete_autor(){
+            $db = Connect::Conectar()->prepare("DELETE FROM autor WHERE id='".$this->id."'");
             $res = $db->execute();
             if($res){
-                $this->get_editoriales();
+                $this->get_autores();
             }else{
                 return false;
             }
         }
 
         public function get_id($codigo){
-            $db = Connect::Conectar()->prepare("SELECT * FROM editorial WHERE codigo='".$this->id."' ");
+            $db = Connect::Conectar()->prepare("SELECT * FROM autor WHERE id='".$this->id."' ");
             $res = $db->execute();
             if($row = $res->fetch_assoc()){
-                $this->editorial[] = $row;
+                $this->autor[] = $row;
             }
-            return $this->editorial;
+            return $this->autor;
         }
 
-        public function actualizar(){
-            $db = Connect::Conectar()->prepare("UPDATE editorial SET nombre='".$this->editorial."' where codigo='".$this->id."' ");
+        public function update_autor(){
+            $db = Connect::Conectar()->prepare("UPDATE autor SET nombre='".$this->nombre."' , apellido='".$this->apellido." ' where id='".$this->id."' ");
             $res = $db->execute();
             if($res){
-                $this->get_editoriales();
+                $this->get_autores();
             }else{
                 return false;
             }
