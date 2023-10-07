@@ -61,11 +61,11 @@
             <li class="nav-item">
               <form action="Controlador.php" method="post" class="row g-3">
                 <div class="col-12">
-                    <input type="hidden" name="Clase" value="AutorModel">
-                    <input type="hidden" name="Funcion" value="get_autores">
-                    <input type="hidden" name="id" value="">
-                    <input type="hidden" name="nombre" value="">
-                    <input type="hidden" name="apellido" value="">
+                    <input type="hidden" name="Clase" value="EjemplarModel">
+                    <input type="hidden" name="Funcion" value="get_ejemplar">
+                    <input type="hidden" name="codigo" value="">
+                    <input type="hidden" name="localizacion" value="">
+                    <input type="hidden" name="idlibro" value="">
                     <button type="submit" class="btn btn-link" style="color: black;" name="Boton">Admin Ejemplar </button>
                 </div>
                 </form>            
