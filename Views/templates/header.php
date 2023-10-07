@@ -30,21 +30,58 @@
             <li class="nav-item">
               <a class="nav-link active" aria-current="page" href="#">Inicio</a>
             </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Admin Libros</a>
-              <div class="dropdown-menu" aria-labelledby="dropdownId">
-                  <a class="dropdown-item" href="#">Autor</a>
-                <a class="dropdown-item" href="#">Libro</a>
-                <a class="dropdown-item" href="#">Ejemplar</a>
-              </div>
-          </li>
-          <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Admin Prestamos</a>
-              <div class="dropdown-menu" aria-labelledby="dropdownId">
-                  <a class="dropdown-item" href="#">Usuario</a>
-                <a class="dropdown-item" href="#">Prestamo</a>
-              </div>
-          </li>
+            <li class="nav-item">
+              <form action="Controlador.php" method="post" class="row g-3">
+                <div class="col-12">
+                    <input type="hidden" name="Clase" value="AutorModel">
+                    <input type="hidden" name="Funcion" value="get_autores">
+                    <input type="hidden" name="id" value="">
+                    <input type="hidden" name="nombre" value="">
+                    <input type="hidden" name="apellido" value="">
+                    <button type="submit" class="btn btn-link" style="color: black;" name="Boton">Admin Autor </button>
+                </div>
+                </form>            
+            </li>
+            <li class="nav-item">
+              <form action="Controlador.php" method="post" class="row g-3">
+                <div class="col-12">
+                    <input type="hidden" name="Clase" value="LibroModel">
+                    <input type="hidden" name="Funcion" value="get_libros">
+                    <input type="hidden" name="codigo" value="">
+                    <input type="hidden" name="titulo" value="">
+                    <input type="hidden" name="isbn" value="">
+                    <input type="hidden" name="editorial" value="">
+                    <input type="hidden" name="paginas value="">
+                    <input type="hidden" name="idAutor" value="">
+                    <button type="submit" class="btn btn-link" style="color: black;" name="Boton">Admin Libro </button>
+                </div>
+                </form>            
+            </li>
+            
+            <li class="nav-item">
+              <form action="Controlador.php" method="post" class="row g-3">
+                <div class="col-12">
+                    <input type="hidden" name="Clase" value="AutorModel">
+                    <input type="hidden" name="Funcion" value="get_autores">
+                    <input type="hidden" name="id" value="">
+                    <input type="hidden" name="nombre" value="">
+                    <input type="hidden" name="apellido" value="">
+                    <button type="submit" class="btn btn-link" style="color: black;" name="Boton">Admin Ejemplar </button>
+                </div>
+                </form>            
+            </li>
+            <li class="nav-item">
+              <form action="Controlador.php" method="post" class="row g-3">
+                <div class="col-12">
+                    <input type="hidden" name="Clase" value="AutorModel">
+                    <input type="hidden" name="Funcion" value="get_autores">
+                    <input type="hidden" name="id" value="">
+                    <input type="hidden" name="nombre" value="">
+                    <input type="hidden" name="apellido" value="">
+                    <button type="submit" class="btn btn-link" style="color: black;" name="Boton">Admin Usuario </button>
+                </div>
+                </form>            
+            </li>
             <li class="nav-item">
               <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true"></a>
             </li>
