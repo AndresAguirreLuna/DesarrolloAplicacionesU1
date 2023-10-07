@@ -79,11 +79,7 @@ require_once("../Config/database.php");
             $db->execute();
             $autores = $db->fetchAll(PDO::FETCH_ASSOC);
             $json_autores = json_encode($autores);
-
-            // Establece las cabeceras HTTP para indicar que la respuesta es JSON
             header('Content-Type: application/json');
-        
-            // Imprime la respuesta JSON
             echo $json_autores;
         }
 

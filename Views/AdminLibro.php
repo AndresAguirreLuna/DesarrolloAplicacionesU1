@@ -111,7 +111,6 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
 $(document).ready(function() {
-    debugger;
         $.ajax({
             url: '../Controllers/Controlador.php?C=LibroModel&F=obtener_autores&Parametro=1&codigo=1&titulo=t&isbn=i&editorial=e&paginas=1&idAutor=2',
             method: 'GET',
@@ -120,8 +119,8 @@ $(document).ready(function() {
                 $('#ddlAutor').empty();
                 $.each(data, function(index, option) {
                     $('#ddlAutor').append($('<option>', {
-                        value: option.id,
-                        text: option.nombre
+                        value: option.Id,
+                        text: option.Nombre
                     }));
                 });
             },
