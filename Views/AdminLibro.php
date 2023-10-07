@@ -13,6 +13,8 @@
                 <th>Editorial</th>
                 <th>Paginas</th>
                 <th>Autor</th>
+                <th>Editar</th>
+                <th>Eliminar</th>
             </tr>
         </thead>
         <tbody>
@@ -23,9 +25,9 @@
                     <th><?php echo $row[2]; ?></th>
                     <th><?php echo $row[3]; ?></th>
                     <th><?php echo $row[4]; ?></th>
-                    <th><?php echo $row[5]; ?></th>
+                    <th><?php echo $row[7]; ?></th>
                     <th><button type="button" class="btn btn-warning" value="<?php echo $row[0]; ?>" name="EditarLibro" data-bs-toggle="modal" data-bs-target="#exampleModal" class="modalEditar" >Editar</button></th>
-                    <th><a class="btn btn-danger" href="../Controllers/Controlador.php?C=AutorModel&F=delete_autor&Parametro=1&nombre=no&apellido=ap&id=<?php echo $row[0]; ?>">Borrar</a></th>
+                    <th><a class="btn btn-danger" href="../Controllers/Controlador.php?C=LibroModel&F=delete_libro&Parametro=1&codigo=1&titulo=t&isbn=i&editorial=e&paginas=1&idAutor=2&codigo=<?php echo $row[0]; ?>">Borrar</a></th>
                 </tr>
             <?php endwhile;?>
         </tbody>
@@ -42,21 +44,33 @@
       </div>
       <div class="modal-body">
         <form action="../Controllers/Controlador.php" method="post">
-          <div class="mb-3">
+        <div class="mb-3">
             <label for="recipient-name" class="col-form-label">Codigo:</label>
-            <input type="text" class="form-control" id="id" name="id">
+            <input type="text" class="form-control" id="codigo" name="codigo">
           </div>
           <div class="mb-3">
-            <label for="message-text" class="col-form-label">Nombre:</label>
-            <input type="text" class="form-control" id="nombre" name="nombre"></textarea>
+            <label for="message-text" class="col-form-label">Titulo:</label>
+            <input type="text" class="form-control" id="titulo" name="titulo"></textarea>
           </div>
           <div class="mb-3">
-            <label for="message-text" class="col-form-label">Apellido:</label>
-            <input type="text" class="form-control" id="Apellido" name="apellido"></textarea>
+            <label for="message-text" class="col-form-label">ISBN:</label>
+            <input type="text" class="form-control" id="isbn" name="isbn"></textarea>
           </div>
           <div class="mb-3">
-            <input type="hidden" name="Clase" value="AutorModel">
-            <input type="hidden" name="Funcion" value="update_autor">
+            <label for="message-text" class="col-form-label">Editorial:</label>
+            <input type="text" class="form-control" id="editorial" name="editorial"></textarea>
+          </div>
+          <div class="mb-3">
+            <label for="message-text" class="col-form-label">Paginas:</label>
+            <input type="text" class="form-control" id="paginas" name="paginas"></textarea>
+          </div>
+          <div class="mb-3">
+            <label for="message-text" class="col-form-label">Autor:</label>
+            <select id="idAutor" name="idAutor" class="form-control">
+        </select>
+          <div class="mb-3">
+            <input type="hidden" name="Clase" value="LibroModel">
+            <input type="hidden" name="Funcion" value="update_libro">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
             <button type="submit" class="btn btn-primary" name="Boton">Actualizar</button>
           </div>
@@ -71,35 +85,39 @@
   <div class="modal-dialog">
     <div class="modal-content">
     <div class="modal-header">
-        <h5 class="modal-title" id="agregarAutor">Agregar Autor</h5>
+        <h5 class="modal-title" id="agregarLibro">Agregar Libro</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
         <form action="../Controllers/Controlador.php" method="post">
           <div class="mb-3">
             <label for="recipient-name" class="col-form-label">Codigo:</label>
-            <input type="text" class="form-control" id="id" name="id">
+            <input type="text" class="form-control" id="codigo" name="codigo">
           </div>
           <div class="mb-3">
-            <label for="message-text" class="col-form-label">Nombre:</label>
-            <input type="text" class="form-control" id="nombre" name="nombre"></textarea>
+            <label for="message-text" class="col-form-label">Titulo:</label>
+            <input type="text" class="form-control" id="titulo" name="titulo"></textarea>
           </div>
           <div class="mb-3">
-            <label for="message-text" class="col-form-label">Apellido:</label>
-            <input type="text" class="form-control" id="nombre" name="apellido"></textarea>
+            <label for="message-text" class="col-form-label">ISBN:</label>
+            <input type="text" class="form-control" id="isbn" name="isbn"></textarea>
           </div>
           <div class="mb-3">
-            <label for="message-text" class="col-form-label">Apellido:</label>
-            <input type="text" class="form-control" id="nombre" name="apellido"></textarea>
+            <label for="message-text" class="col-form-label">Editorial:</label>
+            <input type="text" class="form-control" id="editorial" name="editorial"></textarea>
+          </div>
+          <div class="mb-3">
+            <label for="message-text" class="col-form-label">Paginas:</label>
+            <input type="text" class="form-control" id="paginas" name="paginas"></textarea>
           </div>
           <div class="mb-3">
             <label for="message-text" class="col-form-label">Autor:</label>
-            <select id="ddlAutor" class="form-control">
+            <select id="idAutor" name="idAutor" class="form-control">
         </select>
           </div>
           <div class="mb-3">
-            <input type="hidden" name="Clase" value="AutorModel">
-            <input type="hidden" name="Funcion" value="create_autor">
+            <input type="hidden" name="Clase" value="LibroModel">
+            <input type="hidden" name="Funcion" value="create_libro">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
             <button type="submit" class="btn btn-success" name="Boton">Guardar</button>
           </div>
@@ -116,9 +134,9 @@ $(document).ready(function() {
             method: 'GET',
             dataType: 'json',
             success: function(data) {
-                $('#ddlAutor').empty();
+                $('#idAutor').empty();
                 $.each(data, function(index, option) {
-                    $('#ddlAutor').append($('<option>', {
+                    $('#idAutor').append($('<option>', {
                         value: option.Id,
                         text: option.Nombre
                     }));
