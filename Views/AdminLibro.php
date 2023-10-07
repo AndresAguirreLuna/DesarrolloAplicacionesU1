@@ -120,7 +120,7 @@ $(document).ready(function() {
                 $.each(data, function(index, option) {
                     $('#ddlAutor').append($('<option>', {
                         value: option.Id,
-                        text: option.Nombre
+                        text: option.Nombre + ' ' + option.Apellido
                     }));
                 });
             },
