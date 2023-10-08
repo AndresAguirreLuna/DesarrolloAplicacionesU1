@@ -67,6 +67,7 @@
                     <input type="hidden" name="codigo" value="">
                     <input type="hidden" name="localizacion" value="">
                     <input type="hidden" name="idlibro" value="">
+                    <input type="hidden" name="idlibroU" value="">
                     <button type="submit" class="btn btn-link" style="color: black;" name="Boton">Admin Ejemplar </button>
                 </div>
                 </form>            
