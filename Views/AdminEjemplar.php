@@ -46,7 +46,7 @@
           </div>
           <div class="mb-3">
             <label for="message-text" class="col-form-label">Id Libro:</label>
-            <input type="text" class="form-control" id="IdLibro" name="IdLibro"></textarea>
+            <input type="text" class="form-control" id="idlibro" name="idlibro"></textarea>
           </div>
           <div class="mb-3">
             <input type="hidden" name="Clase" value="EjemplarModel">
@@ -80,7 +80,8 @@
           </div>
           <div class="mb-3">
             <label for="message-text" class="col-form-label">Id Libro:</label>
-            <input type="text" class="form-control" id="IdLibro" name="IdLibro"></textarea>
+            <select id="idlibro" name="idlibro" class="form-control">
+        </select>
           </div>
           <div class="mb-3">
             <input type="hidden" name="Clase" value="EjemplarModel">
@@ -97,15 +98,15 @@
 <script>
 $(document).ready(function() {
         $.ajax({
-            url: '../Controllers/Controlador.php?C=ejemplarModel&F=obtener_ejemplares&Parametro=1&codigo=1&localizacion=t&idlibro',
+            url: '../Controllers/Controlador.php?C=ejemplarModel&F=obtener_libros&Parametro=1&codigo=1&localizacion=t&idlibro=l',
             method: 'GET',
             dataType: 'json',
             success: function(data) {
-                $('#idAutor').empty();
+                $('#idlibro').empty();
                 $.each(data, function(index, option) {
-                    $('#IdLibro').append($('<option>', {
-                        value: option.Id,
-                        text: option.IdLibro + ' ' + option.Localizacion
+                    $('#idlibro').append($('<option>', {
+                        value: option.Codigo,
+                        text: option.Titulo
                     }));
                 });
             },

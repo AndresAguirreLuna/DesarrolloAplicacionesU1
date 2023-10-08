@@ -10,7 +10,7 @@ require_once("../Config/database.php");
         public function __construct($parametros){
             $this->codigo = $parametros["codigo"];
             $this->Localizacion = $parametros["localizacion"];
-            $this->idLibro = $parametros["idLibro"];
+            $this->idlibro = $parametros["idlibro"];
         }
 
         public function create_ejemplar(){
@@ -69,6 +69,14 @@ require_once("../Config/database.php");
                 return false;
             }
         }
-
+        public function obtener_libros()
+        {
+            $db = Connect::Conectar()->prepare("SELECT * FROM libro");
+            $db->execute();
+            $libros = $db->fetchAll(PDO::FETCH_ASSOC);
+            $json_libros = json_encode($libros);
+            header('Content-Type: application/json');
+            echo $json_libros;
+        }
     }
 ?>
