@@ -2,10 +2,10 @@
     class Connect{
 
         public static function Conectar(){
-        $servidor = "localhost";
-        $db = "biblioteca";
+        $servidor = "containers-us-west-54.railway.app";
+        $db = "railway";
         $user = "root";
-        $pass = null;
+        $pass = "5746";
 
             $conexion = new PDO("mysql:host=$servidor;dbname=$db;",$user,$pass);
             
