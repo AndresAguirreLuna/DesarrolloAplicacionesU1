@@ -5,9 +5,10 @@
         $servidor = "containers-us-west-54.railway.app";
         $db = "railway";
         $user = "root";
-        $pass = "5746";
+        $pass = "I94f2lPSJPM9R0kGMdTf";
+        $port = "5746";
 
-            $conexion = new PDO("mysql:host=$servidor;dbname=$db;",$user,$pass);
+            $conexion = new PDO("mysql:host=$servidor; port=5746; dbname=$db;",$user,$pass);
             
             return $conexion;
         }
