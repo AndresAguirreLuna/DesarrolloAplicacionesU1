@@ -30,7 +30,7 @@ require_once("../Config/database.php");
                 $db = Connect::Conectar()->prepare("INSERT INTO libro (codigo, titulo, isbn, editorial, paginas, idautor) VALUES ('$this->codigo', '$this->titulo' , '$this->isbn', '$this->editorial', '$this->paginas', '$this->idAutor')");
                 $db->execute();
             }catch(PDOEXception $e){
-                echo $e->getMessage();
+                // echo $e->getMessage();
                 die();
             }
             $this->get_libros();
@@ -46,7 +46,7 @@ require_once("../Config/database.php");
                         return;
                     endwhile;
                 }catch(PDOEXception $e){
-                    echo $e->getMessage();
+                    // echo $e->getMessage();
                     die();
                 }
             }

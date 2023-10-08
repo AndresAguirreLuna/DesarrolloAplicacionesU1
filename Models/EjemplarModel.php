@@ -24,7 +24,7 @@ require_once("../Config/database.php");
                 $db = Connect::Conectar()->prepare("INSERT INTO ejemplares (codigo, localizacion, idlibro) VALUES ('$this->codigo', '$this->localizacion' , '$this->idlibro')");
                 $db->execute();
             }catch(PDOEXception $e){
-                echo $e->getMessage();
+                // echo $e->getMessage();
                 die();
             }
             $this->get_ejemplar();
@@ -40,7 +40,7 @@ require_once("../Config/database.php");
                         return;
                     endwhile;
                 }catch(PDOEXception $e){
-                    echo $e->getMessage();
+                    // echo $e->getMessage();
                     die();
                 }
             }
