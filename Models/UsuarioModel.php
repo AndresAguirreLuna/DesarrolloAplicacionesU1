@@ -6,6 +6,11 @@ require_once("../Config/database.php");
         private $db;
         private $usuario;
         private $id;
+        
+        public $codigo;
+        public $nombre;
+        public $telefono;
+        public $direccion;
 
         public function __construct($parametros){
             $this->codigo = $parametros["codigo"];

@@ -7,6 +7,11 @@ require_once("../Config/database.php");
         private $ejemplares;
         private $id;
 
+        public $codigo;
+        public $localizacion;
+        public $idlibro;
+        public $idlibroU;
+
         public function __construct($parametros){
             $this->codigo = $parametros["codigo"];
             $this->localizacion = $parametros["localizacion"];

@@ -7,6 +7,10 @@ require_once("../Config/database.php");
         private $autor;
         private $id;
 
+        public $nombre;
+        public $apellido;
+        public $id;
+    
         public function __construct($parametros){
             $this->nombre = $parametros["nombre"];
             $this->apellido = $parametros["apellido"];
