@@ -73,11 +73,12 @@
             <li class="nav-item">
               <form action="Controlador.php" method="post" class="row g-3">
                 <div class="col-12">
-                    <input type="hidden" name="Clase" value="AutorModel">
-                    <input type="hidden" name="Funcion" value="get_autores">
-                    <input type="hidden" name="id" value="">
+                    <input type="hidden" name="Clase" value="UsuarioModel">
+                    <input type="hidden" name="Funcion" value="get_usuarios">
+                    <input type="hidden" name="codigo" value="">
                     <input type="hidden" name="nombre" value="">
-                    <input type="hidden" name="apellido" value="">
+                    <input type="hidden" name="telefono" value="">
+                    <input type="hidden" name="direccion" value="">
                     <button type="submit" class="btn btn-link" style="color: black;" name="Boton">Admin Usuario </button>
                 </div>
                 </form>            
