@@ -138,7 +138,7 @@ $(document).ready(function() {
                 $.each(data, function(index, option) {
                     $('#idAutor').append($('<option>', {
                         value: option.Id,
-                        text: option.Nombre
+                        text: option.Nombre + ' ' + option.Apellido
                     }));
                 });
             },
