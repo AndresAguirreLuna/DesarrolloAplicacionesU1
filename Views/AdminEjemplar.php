@@ -19,7 +19,7 @@
                     <th><?php echo $row[1]; ?></th>
                     <th><?php echo $row[2]; ?></th>
                     <th><button type="button" class="btn btn-warning" value="<?php echo $row[0]; ?>" name="EditarEjemplar" data-bs-toggle="modal" data-bs-target="#exampleModal" class="modalEditar" >Editar</button></th>
-                    <th><a class="btn btn-danger" href="../Controllers/Controlador.php?C=EjemplarModel&F=delete_ejemplares&Parametro=1&codigo=no&localizacion=ap&id=<?php echo $row[0]; ?>">Borrar</a></th>
+                    <th><a class="btn btn-danger" href="../Controllers/Controlador.php?C=EjemplarModel&F=delete_ejemplares&Parametro=1&codigo=no&localizacion=ap&idlibro=<?php echo $row[0]; ?>">Borrar</a></th>
                 </tr>
             <?php endwhile;?>
         </tbody>
@@ -93,6 +93,28 @@
     </div>
   </div>
 </div>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+$(document).ready(function() {
+        $.ajax({
+            url: '../Controllers/Controlador.php?C=ejemplarModel&F=obtener_ejemplares&Parametro=1&codigo=1&localizacion=t&idlibro',
+            method: 'GET',
+            dataType: 'json',
+            success: function(data) {
+                $('#idAutor').empty();
+                $.each(data, function(index, option) {
+                    $('#IdLibro').append($('<option>', {
+                        value: option.Id,
+                        text: option.IdLibro + ' ' + option.Localizacion
+                    }));
+                });
+            },
+            error: function() {
+                alert('Error al cargar las opciones del dropdown.');
+            }
+    });
+});
+</script>
 
 <?php
     require_once("templates/footer.php");
