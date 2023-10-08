@@ -7,6 +7,14 @@ require_once("../Config/database.php");
         private $libro;
         private $id;
 
+        public $codigo;
+        public $titulo;
+        public $isbn;
+        public $editorial;
+        public $paginas;
+        public $idAutor;
+        public $idAutorU;
+
         public function __construct($parametros){
             $this->codigo = $parametros["codigo"];
             $this->titulo = $parametros["titulo"];
