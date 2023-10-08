@@ -14,6 +14,7 @@ require_once("../Config/database.php");
             $this->editorial = $parametros["editorial"];
             $this->paginas = $parametros["paginas"];
             $this->idAutor = $parametros["idAutor"];
+            $this->idAutorU = $parametros["idAutorU"];
         }
 
         public function create_libro(){
@@ -55,7 +56,7 @@ require_once("../Config/database.php");
         }
 
         public function update_libro(){
-            $db = Connect::Conectar()->prepare("UPDATE libro SET Codigo='".$this->codigo."' , Titulo='".$this->titulo." ', ISBN='".$this->isbn." ', Editorial='".$this->editorial." ', Paginas='".$this->paginas." ', IdAutor='".$this->idAutor." ' where codigo='".$this->codigo."' ");
+            $db = Connect::Conectar()->prepare("UPDATE libro SET  Titulo='".$this->titulo." ', ISBN='".$this->isbn." ', Editorial='".$this->editorial." ', Paginas='".$this->paginas." ', IdAutor='".$this->idAutorU." ' where codigo='".$this->codigo."' ");
             $res = $db->execute();
             if($res){
                 $this->get_libros();

@@ -53,6 +53,7 @@
                     <input type="hidden" name="editorial" value="">
                     <input type="hidden" name="paginas value="">
                     <input type="hidden" name="idAutor" value="">
+                    <input type="hidden" name="idAutorU" value="">
                     <button type="submit" class="btn btn-link" style="color: black;" name="Boton">Admin Libro </button>
                 </div>
                 </form>            
