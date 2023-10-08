@@ -20,7 +20,7 @@
     <nav class="navbar navbar-expand-lg navbar navbar-light" style="background-color: cadetblue;">
       <div class="container-fluid">
         <a class="navbar-brand" href="#">
-          <img src="https://www.iudigital.edu.co/images/11.-IU-DIGITAL.png" alt="Logo" width="80%" height="80%" class="d-inline-block align-text-top">
+          <img src="https://www.iudigital.edu.co/images/11.-IU-DIGITAL.png" alt="Logo" width="60%" height="80%" class="d-inline-block align-text-top">
           </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
