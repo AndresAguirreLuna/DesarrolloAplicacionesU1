@@ -102,7 +102,7 @@
 <script>
 $(document).ready(function() {
         $.ajax({
-            url: '../Controllers/Controlador.php?C=ejemplarModel&F=obtener_libros&Parametro=1&codigo=1&localizacion=t&idlibro=l&idlibroU=l',
+            url: '../Controllers/Controlador.php?C=EjemplarModel&F=obtener_libros&Parametro=1&codigo=1&localizacion=t&idlibro=l&idlibroU=l',
             method: 'GET',
             dataType: 'json',
             success: function(data) {
