@@ -67,7 +67,7 @@ require '../Librerias/fpdf186/fpdf.php';
             $pdf->Cell(0, 10, 'Contenido del PDF', 0, 1);
     
             // Generar el PDF
-            $pdf->Output('nombre_del_archivo.pdf', 'I');
+            $pdf->Output('prueba.pdf', 'I');
         }
               
     }
