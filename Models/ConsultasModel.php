@@ -73,7 +73,6 @@ require '../Librerias/fpdf186/fpdf.php';
     // Generar el PDF
     $pdf->Output();
   
-  echo "cargar pdf";
     }
               
     }
