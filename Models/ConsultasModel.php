@@ -25,12 +25,13 @@ require_once("../Config/database.php");
                     die();
                 }
             }
-            return $this->usuario;
+            return $this->codigo;
         }
         public function get_ConsultaPrestamoUsuario(){
             $db = Connect::Conectar()->prepare("SELECT prestamo.Id, usuarios.Nombre, libro.Titulo, prestamo.FechaPrestamo, prestamo.FechaDevo FROM prestamo INNER JOIN usuarios on prestamo.IdUsuario = usuarios.Codigo 
             INNER JOIN ejemplares on ejemplares.Codigo = prestamo.IdEjemplar
-            Inner JOIN libro on libro.Codigo = ejemplares.IdLibro WHERE usuarios.Codigo = 13");
+            Inner JOIN libro on libro.Codigo = ejemplares.IdLibro WHERE usuarios.Codigo = :codigo");
+            $db->bindParam(':codigo', $codigo, PDO::PARAM_INT); 
             $db->execute();
             if($db->rowCount()>=0){
                 try{
@@ -43,7 +44,7 @@ require_once("../Config/database.php");
                     die();
                 }
             }
-            return $this->usuario;
+            return $this->codigo;
         }
         public function ConsultaUsuarios()
         {
