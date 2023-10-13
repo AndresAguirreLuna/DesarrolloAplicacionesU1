@@ -1,5 +1,7 @@
 <?php
 require_once("../Config/database.php");
+require 'Libreria/fpdf186/fpdf.php';
+
 
     class ConsultasModel{
 
@@ -55,5 +57,18 @@ require_once("../Config/database.php");
             header('Content-Type: application/json');
             echo $json_usuarios;
         }
+
+        public function cargarAPDF($data) {
+            $pdf = new FPDF();
+            $pdf->AddPage();
+    
+            // Agregar contenido al PDF
+            $pdf->SetFont('Arial', 'holamundo', 12);
+            $pdf->Cell(0, 10, 'Contenido del PDF', 0, 1);
+    
+            // Generar el PDF
+            $pdf->Output('nombre_del_archivo.pdf', 'I');
+        }
+              
     }
 ?>
