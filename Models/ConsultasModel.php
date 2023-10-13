@@ -1,6 +1,6 @@
 <?php
 require_once("../Config/database.php");
-require 'Libreria/fpdf186/fpdf.php';
+require __DIR__ . '/Librerias/fpdf186/fpdf.php';
 
 
     class ConsultasModel{
