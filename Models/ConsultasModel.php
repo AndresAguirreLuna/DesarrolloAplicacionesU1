@@ -66,8 +66,12 @@ require '../Librerias/fpdf186/fpdf.php';
             $pdf->SetFont('Arial', '', 12);
             $pdf->Cell(0, 10, 'Hola Mundo', 0, 1);
     
-            // Generar el PDF
-            $pdf->Output('prueba.pdf', 'I');
+            // Configurar los encabezados para la respuesta
+    header('Content-Type: application/pdf');
+    header('Content-Disposition: attachment; filename="prueba.pdf"');
+
+    // Generar el PDF
+    $pdf->Output();
   
   echo "cargar pdf";
     }
