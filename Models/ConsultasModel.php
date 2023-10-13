@@ -59,15 +59,15 @@ require '../Librerias/fpdf186/fpdf.php';
         }
 
         public function cargarPDF() {
-        //     $pdf = new FPDF();
-        //     $pdf->AddPage();
+            $pdf = new FPDF();
+            $pdf->AddPage();
     
-        //     // Agregar contenido al PDF
-        //     $pdf->SetFont('Arial', 'holamundo', 12);
-        //     $pdf->Cell(0, 10, 'Contenido del PDF', 0, 1);
+            // Agregar contenido al PDF
+            $pdf->SetFont('Arial', 'holamundo', 12);
+            $pdf->Cell(0, 10, 'Contenido del PDF', 0, 1);
     
-        //     // Generar el PDF
-        //     $pdf->Output('prueba.pdf', 'I');
+            // Generar el PDF
+            $pdf->Output('prueba.pdf', 'I');
   
   echo "cargar pdf";
     }
