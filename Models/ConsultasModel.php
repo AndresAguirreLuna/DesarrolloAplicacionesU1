@@ -68,7 +68,7 @@ require '../Librerias/fpdf186/fpdf.php';
     
             // Configurar los encabezados para la respuesta
     header('Content-Type: application/pdf');
-    header('Content-Disposition: attachment; filename="prueba.pdf"');
+    header('Content-Disposition: attachment; filename="../Config/prueba.pdf"');
 
     // Generar el PDF
     $pdf->Output();
