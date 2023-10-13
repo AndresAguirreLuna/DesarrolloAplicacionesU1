@@ -58,7 +58,7 @@ require 'Libreria/fpdf186/fpdf.php';
             echo $json_usuarios;
         }
 
-        public function cargarAPDF($data) {
+        public function cargarPDF() {
             $pdf = new FPDF();
             $pdf->AddPage();
     

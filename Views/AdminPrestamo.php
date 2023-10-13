@@ -8,6 +8,7 @@
 <select id="IdUsuario" name="IdUsuario" class="form-control">
         </select>
     <button type="submit" class="btn btn-primary" name="Boton">Consultar</button>
+    <button type="button" class="btn btn-primary" id="generarPDF" name="generarPDF">Exportar PDF</button>
     <br><br>
 <table border="1" width="80%" class="table table-striped">
         <thead>
@@ -51,6 +52,19 @@ $(document).ready(function() {
             error: function() {
                 alert('Error al cargar las opciones del dropdown.');
             }
+    });
+
+    $('#generarPDF').click(function() {
+        // Realizar una llamada AJAX para ejecutar la función cargarAPDF en el servidor
+        $.ajax({
+            url: '../Controllers/Controlador.php?C=ConsultasModel&F=cargarPDF&Parametro=1&IdUsuario=1', // Ajusta la ruta al controlador o archivo PHP que maneja la lógica
+            type: 'POST',
+            data: { action: 'generar_pdf' }, // Puedes enviar datos adicionales si es necesario
+            success: function(response) {
+                // Manejar la respuesta del servidor, como abrir el PDF en una nueva ventana
+                window.open('ruta/al/pdf/generado.pdf', '_blank');
+            }
+        });
     });
 });
 </script>
