@@ -81,7 +81,7 @@ require '../Librerias/fpdf186/fpdf.php';
 
     public function cargarPDF() {
             // Ruta completa al archivo PDF existente
-            $pdfPath = '/Archivos/exportpdf.pdf';
+            $pdfPath = '../Archivos/exportpdf.pdf';
     
             // Crear un objeto FPDF
             $pdf = new FPDF();

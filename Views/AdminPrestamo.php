@@ -62,7 +62,7 @@ $(document).ready(function() {
             data: { action: 'generar_pdf' }, // Puedes enviar datos adicionales si es necesario
             success: function(response) {
                 // Manejar la respuesta del servidor, como abrir el PDF en una nueva ventana
-                window.open('/Archivos/exportpdf.pdf', '_blank');
+                window.open('../Archivos/exportpdf.pdf', '_blank');
             }
         });
     });
