@@ -83,6 +83,16 @@
                     <input type="hidden" name="direccion" value="">
                     <button type="submit" class="btn btn-link" style="color: black;" name="Boton">Admin Usuario </button>
                 </div>
+                </form>       
+            </li>
+            <li class="nav-item">
+              <form action="Controlador.php" method="post" class="row g-3">
+                <div class="col-12">
+                    <input type="hidden" name="Clase" value="ConsultasModel">
+                    <input type="hidden" name="Funcion" value="get_ConsultaPrestamo">
+                    <input type="hidden" name="IdUsuario" value="">
+                    <button type="submit" class="btn btn-link" style="color: black;" name="Boton">Consulta Préstamos </button>
+                </div>
                 </form>            
             </li>
             <li class="nav-item">
