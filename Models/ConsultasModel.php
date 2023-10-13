@@ -63,8 +63,8 @@ require '../Librerias/fpdf186/fpdf.php';
             $pdf->AddPage();
     
             // Agregar contenido al PDF
-            $pdf->SetFont('Arial', 'holamundo', 12);
-            $pdf->Cell(0, 10, 'Contenido del PDF', 0, 1);
+            $pdf->SetFont('Arial', '', 12);
+            $pdf->Cell(0, 10, 'Hola Mundo', 0, 1);
     
             // Generar el PDF
             $pdf->Output('prueba.pdf', 'I');
