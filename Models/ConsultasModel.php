@@ -73,7 +73,7 @@ require '../Librerias/fpdf186/fpdf.php';
 
     
 // Configurar la ubicación para guardar el PDF
-$pdfPath = '../Archivos/exportpdf.pdf';
+$pdfPath = '../Archivos/';
 
 // Generar el PDF y guardarlo en la ubicación especificada
 $pdf->Output($pdfPath, 'F');
