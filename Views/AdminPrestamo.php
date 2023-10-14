@@ -33,7 +33,7 @@
     </table>
  </div>
 </form>
-<button type="button" class="btn btn-primary" id="exportCSV" name="generarPDF">Exportar PDF</button>
+<button type="button" class="btn btn-primary" id="exportCSV" name="generarPDF">Exportar</button>
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
