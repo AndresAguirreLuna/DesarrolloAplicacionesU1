@@ -20,13 +20,15 @@
             </tr>
         </thead>
         <tbody>
+        <?php while($row = $db->fetch()):?>
                 <tr>
-                    <th>123</th>
-                    <th>124</th>
-                    <th>456</th>
-                    <th>897</th>
-                    <th>35453</th>
+                    <th><?php echo $row[0]; ?></th>
+                    <th><?php echo $row[1]; ?></th>
+                    <th><?php echo $row[2]; ?></th>
+                    <th><?php echo $row[3]; ?></th>
+                    <th><?php echo $row[4]; ?></th>
                 </tr>
+            <?php endwhile;?>
             </tbody>
     </table>
  </div>
