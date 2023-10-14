@@ -1,6 +1,6 @@
 <?php
-require_once ("../Config/database.php");
-require_once ("../Librerias/fpdf186/fpdf.php");
+require_once("../Config/database.php");
+require '../Librerias/fpdf186/fpdf.php';
 
 
     class ConsultasModel{
@@ -58,28 +58,49 @@ require_once ("../Librerias/fpdf186/fpdf.php");
             echo $json_usuarios;
         }
 
-    public function cargarPDF() {
-            // Ruta completa al archivo PDF existente
-            $pdfPath = '../Archivos/exportpdf.pdf';
-    
-            // Crear un objeto FPDF
+        public function cargarPDF() {
             $pdf = new FPDF();
             $pdf->AddPage();
     
-            // Agregar el nuevo contenido
+            // Agregar contenido al PDF
             $pdf->SetFont('Arial', '', 12);
             $pdf->Cell(0, 10, 'Hola Mundo', 0, 1);
     
-            // Generar el PDF con el nuevo contenido
-            $pdf->Output($pdfPath, 'F');
+// Configurar la ubicación para guardar el PDF
+$pdfPath = '/Config/prueba.pdf';
+
+// Generar el PDF y guardarlo en la ubicación especificada
+$pdf->Output($pdfPath, 'F');
+
+
+            // Configurar los encabezados para la respuesta
+    header('Content-Type: application/pdf');
+    header('Content-Disposition: attachment; filename="prueba.pdf"');
+
+    }
+
+    // public function reemplazarContenidoPDF() {
+    //         // Ruta completa al archivo PDF existente
+    //         $pdfPath = '/Archivos/exportpdf.pdf';
     
-            // Verificar si la generación del PDF fue exitosa
-            if (file_exists($pdfPath)) {
-                return 'Contenido del PDF reemplazado con éxito.';
-            } else {
-                return 'Error al reemplazar el contenido del PDF.';
-            }
-        }
+    //         // Crear un objeto FPDF
+    //         $pdf = new FPDF();
+    //         $pdf->AddPage();
+    
+    //         // Agregar el nuevo contenido
+    //         $pdf->SetFont('Arial', '', 12);
+    //         $pdf->Cell(0, 10, 'Hola Mundo', 0, 1);
+    
+    //         // Generar el PDF con el nuevo contenido
+    //         $pdf->Output($pdfPath, 'F');
+    
+    //         // Verificar si la generación del PDF fue exitosa
+    //         if (file_exists($pdfPath)) {
+    //             return 'Contenido del PDF reemplazado con éxito.';
+    //         } else {
+    //             return 'Error al reemplazar el contenido del PDF.';
+    //         }
+    //     }
               
     }
 ?>
