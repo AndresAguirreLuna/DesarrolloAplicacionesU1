@@ -64,19 +64,19 @@ require '../Librerias/fpdf186/fpdf.php';
     
             // Agregar contenido al PDF
             $pdf->SetFont('Arial', '', 12);
-            $pdf->Cell(0, 10, 'Hola Mundo', 0, 1);
+            $pdf->Cell(0, 10, 'Hola Mundooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo', 0, 1);
 
 
             // Configurar los encabezados para la respuesta
     header('Content-Type: application/pdf');
-    header('Content-Disposition: attachment; filename="prueba.pdf"');
+    header('Content-Disposition: attachment; filename="exportpdf.pdf"');
 
     
 // Configurar la ubicación para guardar el PDF
-$pdfPath = '../Archivos/';
+// $pdfPath = 'C:/xampp1/htdocs/DesarrolloAplicacionesU1/Archivos/';
 
 // Generar el PDF y guardarlo en la ubicación especificada
-$pdf->Output($pdfPath, 'F');
+$pdf->Output();
 
 
     }
