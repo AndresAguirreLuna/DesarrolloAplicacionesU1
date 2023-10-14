@@ -67,15 +67,17 @@ require '../Librerias/fpdf186/fpdf.php';
             $pdf->Cell(0, 10, 'Hola Mundo', 0, 1);
     
 // Configurar la ubicación para guardar el PDF
-$pdfPath = '/Config/prueba.pdf';
-
-// Generar el PDF y guardarlo en la ubicación especificada
-$pdf->Output($pdfPath, 'F');
+// $pdfPath = '/Config/prueba.pdf';
 
 
             // Configurar los encabezados para la respuesta
     header('Content-Type: application/pdf');
     header('Content-Disposition: attachment; filename="prueba.pdf"');
+
+
+// Generar el PDF y guardarlo en la ubicación especificada
+$pdf->Output();
+
 
     }
 
